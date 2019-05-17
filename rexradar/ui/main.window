@@ -177,6 +177,6 @@
 	"mainScript" : "/rexradar/ui/main.lua",
 
     "localDir" : "/rexradar/ui/",
-	"scripts" : ["/rexradar/ui/scripts/core.lua", "/rexradar/ui/scripts/utf8.lua"],
+	"scripts" : ["/rexradar/ui/scripts/core.lua"],
 	"scriptDelta" : 1
 }
