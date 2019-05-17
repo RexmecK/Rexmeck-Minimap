@@ -1,0 +1,7 @@
+[
+	{
+		"op": "add",
+    	"path": "/normal/-",
+    	"value": { "label" : "Rexmeck Radar", "pane" : "/rexradar/ui/main.window", "icon" : "/rexradar/ui/image/smallicon.png" }
+    }
+]

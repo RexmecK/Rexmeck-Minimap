@@ -1,0 +1,182 @@
+{
+	"gui" : {
+
+		"close" : {
+			"type" : "button",
+
+			"base" : "/rexradar/ui/image/x.png",
+			"hover" : "/rexradar/ui/image/x.png",
+			"pressed" : "/rexradar/ui/image/x.png",
+			"pressedOffset" : [0, 0],
+
+			"callback" : "close",
+			"position" : [189, 132],
+			"zlevel" : 99
+		},
+
+		"background" : {
+			"zlevel" : -1,
+			"type" : "background",
+
+			"fileHeader" : "/rexradar/ui/image/header.png",
+			"fileBody" : "/rexradar/ui/image/body.png"
+		},
+
+		"bg1" : {
+			"zlevel" : 55,
+			"type" : "image",
+
+			"file" : "/rexradar/ui/image/header.png",
+			"position" : [0,132]
+		},
+
+		"h1" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [3, 133],
+			"value" : "^#343434;Rexmeck Radar"
+		},
+
+		"radar" : {
+			"zlevel" : 4,
+			"type" : "canvas",
+			"script" : "/rexradar/ui/widgetScripts/radar.lua",
+			"rect" : [2, 2, 130, 130],
+
+			"captureMouseEvents" : true,
+			"captureKeyboardEvents" : false
+		},
+
+		"showplayers" : {
+			"type" : "button",
+			"base" : "/rexradar/ui/image/uncheck.png",
+			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+
+			"baseImageChecked" : "/rexradar/ui/image/check.png",
+			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+
+			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+
+			"checkable" : true,
+			"checked" : false,
+			"position" : [132, 119],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+		"showplayerstext" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [146, 121],
+			"value" : "Players"
+		},
+
+		"shownpcs" : {
+			"type" : "button",
+			"base" : "/rexradar/ui/image/uncheck.png",
+			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+
+			"baseImageChecked" : "/rexradar/ui/image/check.png",
+			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+
+			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+
+			"checkable" : true,
+			"checked" : false,
+			"position" : [132, 107],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+		"shownpcstext" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [146, 109],
+			"value" : "Npcs"
+		},
+
+		"showmonsters" : {
+			"type" : "button",
+			"base" : "/rexradar/ui/image/uncheck.png",
+			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+
+			"baseImageChecked" : "/rexradar/ui/image/check.png",
+			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+
+			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+
+			"checkable" : true,
+			"checked" : false,
+			"position" : [132, 95],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+		"showmonsterstext" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [146, 97],
+			"value" : "Monsters"
+		},
+
+		"showobjects" : {
+			"type" : "button",
+			"base" : "/rexradar/ui/image/uncheck.png",
+			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+
+			"baseImageChecked" : "/rexradar/ui/image/check.png",
+			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+
+			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+
+			"checkable" : true,
+			"checked" : false,
+			"position" : [132, 83],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+		"showobjectstext" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [146, 85],
+			"value" : "Objects"
+		},
+
+		"showvehicles" : {
+			"type" : "button",
+			"base" : "/rexradar/ui/image/uncheck.png",
+			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+
+			"baseImageChecked" : "/rexradar/ui/image/check.png",
+			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+
+			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+
+			"checkable" : true,
+			"checked" : false,
+			"position" : [132, 71],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+		"showvehiclestext" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [146, 73],
+			"value" : "Vehicles"
+		}
+
+	},
+
+	"canvasClickCallbacks" : {
+		"radar" : "handleMouse"
+	},
+	
+	"canvasKeyCallbacks" : {},
+	
+	"scriptWidgetCallbacks" : [
+		"callback"
+	],
+
+	"mainScript" : "/rexradar/ui/main.lua",
+
+    "localDir" : "/rexradar/ui/",
+	"scripts" : ["/rexradar/ui/scripts/core.lua", "/rexradar/ui/scripts/utf8.lua"],
+	"scriptDelta" : 1
+}
