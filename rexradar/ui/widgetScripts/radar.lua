@@ -79,7 +79,7 @@ function module:renderEntities()
         if v == self.playerId then
             color = "#ff0"
         end
-        
+
         if self.hovering and self.hovering == v then
             color = "#0f0"
             --shows informations about the entity
@@ -98,7 +98,7 @@ function module:renderEntities()
                 infos.Health = infos.Health[1].."/"..infos.Health[2]
             end
 
-            local textHOffset = -8
+            local textHOffset = -6
             for i,v in pairs(infos) do
                 self.canvas:drawText(
                     i..": "..tostring(v),
@@ -108,10 +108,10 @@ function module:renderEntities()
                         verticalAnchor = "mid",
                         wrapWidth = nil
                     },
-                    8,
+                    6,
                     "#fff"
                 )
-                textHOffset = textHOffset - 8
+                textHOffset = textHOffset - 6
             end
             --portrait
             for i,v in ipairs(world.entityPortrait(v, "full") or {}) do
@@ -189,7 +189,9 @@ end
 
 module.mouseDown = {}
 function module:handleMouse(position, button, isdown)
-    if isdown and button == 0 and self.hovering then
+    if isdown and button == 2 then
+        self.viewOffset = vec2.mul(self.sizeCanvas, -0.5)
+    elseif isdown and button == 0 and self.hovering then
         entityTracker:track(self.hovering)
     else
         self.mouseDown[button + 1] = {position, isdown}
