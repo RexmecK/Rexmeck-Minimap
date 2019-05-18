@@ -13,6 +13,7 @@ function module:init()
     self.viewOffset = vec2.mul(self.sizeCanvas, -0.5)
     self.mousePosition = {0,0}
     self.playerPos = {0,0}
+    self.currentWorld = player.worldId()
     self.playerId = player.id()
     self.middle = vec2.mul(self.sizeCanvas, 0.5)
 end
@@ -21,6 +22,11 @@ function module:update(dt)
     self.playerId = player.id()
     self.playerPos = world.entityPosition(player.id())
     self:updateMouse()
+    
+    if self.currentWorld ~= player.worldId() then
+        self.currentWorld = player.worldId()
+        self.chunkManager:clear()
+    end
 
     if self.playerPos then
         self.viewPos = vec2.add(self.playerPos, self.viewOffset)
@@ -33,6 +39,18 @@ function module:update(dt)
         self.chunkManager:update(dt)
         entityTracker:update(dt)
         self:updateCanvas()
+
+        self.canvas:drawText(
+            sb.printJson(self.viewPos),
+            {
+                position = {2,0},
+                horizontalAnchor = "left",
+                verticalAnchor = "bottom",
+                wrapWidth = nil
+            },
+            8,
+            "#fff"
+        )
     end
 end
 

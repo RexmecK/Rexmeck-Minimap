@@ -46,7 +46,7 @@ function chunkManager:getView()
 end
 
 function chunkManager:clear()
-    self.map[x..","..y] = {}
+    self.map = {}
     self.finalRenderedMap = {}
 end
 
