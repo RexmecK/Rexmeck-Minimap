@@ -90,7 +90,7 @@ function module:renderEntities()
                 Trackable = type(world.entityUniqueId(v)) == "string",
             }
             if infos.Health then
-                infos.Health = infos.Health[1].."/"..infos.Health[2]
+                infos.Health = (math.floor(infos.Health[1] * 10) / 10).."/"..(math.floor(infos.Health[2] * 10) / 10)
             end
 
             local textHOffset = -6
