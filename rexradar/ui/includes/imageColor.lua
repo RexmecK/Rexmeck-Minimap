@@ -1,5 +1,5 @@
 
-
+--get pixel color exploit feel free to use.
 function getPixelColor(image, position)
     local color = {0,0,0,0}
     local basecrop = "?crop;"..position[1]..";"..position[2]..";"..(position[1]+1)..";"..(position[2]+1)
@@ -10,6 +10,7 @@ function getPixelColor(image, position)
 			break
 		end
 	end
+	pcall(coroutine.yield)
     for g = 0,255 do
         local rg = root.nonEmptyRegion(image..basecrop.."?multiply=0f00".."?replace="..compactHexString({0,g,0,0}).."=ffff")
 		if rg then
@@ -17,6 +18,7 @@ function getPixelColor(image, position)
 			break
 		end
 	end
+	pcall(coroutine.yield)
     for b = 0,255 do
         local rg = root.nonEmptyRegion(image..basecrop.."?multiply=00f0".."?replace="..compactHexString({0,0,b,0}).."=ffff") 
 		if rg then
@@ -24,13 +26,15 @@ function getPixelColor(image, position)
 			break
 		end
 	end
+	pcall(coroutine.yield)
     for a = 0,255 do
         local rg = root.nonEmptyRegion(image..basecrop.."?multiply=000f".."?replace="..compactHexString({0,0,0,a}).."=0000")
 		if not rg then
 			color[4] = a
 			break
 		end
-    end
+	end
+	pcall(coroutine.yield)
     return color
 end
 
@@ -60,6 +64,7 @@ function getImageColor(image)
 				color = lerpColor(color, getcolor, 0.25)
 			end
 		end
+		pcall(coroutine.yield)
 	end
     cachedColor[image] = color
     return cachedColor[image]

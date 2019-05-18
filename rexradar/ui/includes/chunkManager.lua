@@ -8,7 +8,6 @@ chunkManager.view = {{1,1}, {2,2}}
 chunkManager.map = {}
 chunkManager.finalRenderedMap = {}
 chunkManager.earlyRenderedMap = {}
-chunkManager.blockSpeed = 2 -- blocks per chunk per update
 chunkManager.useWorldProperties = true
 
 function chunkManager:new()
@@ -52,16 +51,21 @@ function chunkManager:clear()
 end
 
 function chunkManager:setBlockSpeed(speed)
-    self.blockSpeed = speed
+    for i,v in pairs(self.map) do
+        chunk.blockSpeed = speed
+        self.map[i]:setBlockSpeed(speed)
+    end
 end
 
 function chunkManager:update(dt)
     self.earlyRenderedMap = {}
+    local used = {}
     for x=self.view[1][1], self.view[2][1] do
         for y=self.view[1][2], self.view[2][2] do
             if not self.map[x..","..y] then
                 self:newChunk({x,y})
             end
+            used[x..","..y] = true 
             local status = self.map[x..","..y].coroutine:status()
             if status == "finished" then
                 local result = self.map[x..","..y].coroutine:result()
@@ -74,11 +78,16 @@ function chunkManager:update(dt)
                 self.map[x..","..y].coroutine:resume()
             elseif status == "suspended" then
                 self.earlyRenderedMap[x..","..y] = compactHexString(self.map[x..","..y].chunk.pcolor)
-                self.map[x..","..y].blockSpeed = self.blockSpeed
                 self.map[x..","..y].coroutine:resume()
             elseif status == "dead" then -- if sometimes happens we need to crash to find errors
                 self.map[x..","..y].chunk:scan()
             end
+        end
+    end
+
+    for i,v in pairs(self.map) do
+        if not used[i] then
+            self.map[i] = nil
         end
     end
 end

@@ -23,7 +23,6 @@ function module:update(dt)
     self:updateMouse()
 
     if self.playerPos then
-        local clock = os.clock()
         self.viewPos = vec2.add(self.playerPos, self.viewOffset)
         local size = self.canvas:size()
 
@@ -34,10 +33,6 @@ function module:update(dt)
         self.chunkManager:update(dt)
         entityTracker:update(dt)
         self:updateCanvas()
-        
-        --debug
-        world.debugText("update : "..(os.clock() - clock), self.playerPos, "white")
-        world.debugText("hovering : "..tostring(self.hovering), vec2.add(self.playerPos, {0,1}), "white")
     end
 end
 
