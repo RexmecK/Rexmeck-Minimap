@@ -4,13 +4,13 @@
 		"close" : {
 			"type" : "button",
 
-			"base" : "/rexradar/ui/image/x.png",
-			"hover" : "/rexradar/ui/image/x.png",
-			"pressed" : "/rexradar/ui/image/x.png",
+			"base" : "/rexradar/ui/imageLarge/x.png",
+			"hover" : "/rexradar/ui/imageLarge/x.png",
+			"pressed" : "/rexradar/ui/imageLarge/x.png",
 			"pressedOffset" : [0, 0],
 
 			"callback" : "close",
-			"position" : [189, 132],
+			"position" : [351, 242],
 			"zlevel" : 99
 		},
 
@@ -18,22 +18,22 @@
 			"zlevel" : -1,
 			"type" : "background",
 
-			"fileHeader" : "/rexradar/ui/image/header.png",
-			"fileBody" : "/rexradar/ui/image/body.png"
+			"fileHeader" : "/rexradar/ui/imageLarge/header.png",
+			"fileBody" : "/rexradar/ui/imageLarge/body.png"
 		},
 
 		"bg1" : {
 			"zlevel" : 55,
 			"type" : "image",
 
-			"file" : "/rexradar/ui/image/header.png",
-			"position" : [0,132]
+			"file" : "/rexradar/ui/imageLarge/header.png",
+			"position" : [0,242]
 		},
 
 		"h1" : {
 			"zlevel" : 100,
 			"type" : "label",
-			"position" : [3, 133],
+			"position" : [3, 243],
 			"value" : "^#343434;Rexmeck Radar"
 		},
 
@@ -41,7 +41,7 @@
 			"zlevel" : 4,
 			"type" : "canvas",
 			"script" : "/rexradar/ui/widgetScripts/radar.lua",
-			"rect" : [62, 2, 198, 130],
+			"rect" : [62, 2, 360, 240],
 
 			"captureMouseEvents" : true,
 			"captureKeyboardEvents" : false
@@ -49,116 +49,116 @@
 
 		"showplayers" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/image/uncheck.png",
-			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+			"base" : "/rexradar/ui/imageLarge/uncheck.png",
+			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/image/check.png",
-			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
 
 			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
-			"position" : [2, 119],
+			"position" : [2, 229],
 			"hAnchor" : "left",
 			"callback" : "callback"
 		},
 		"showplayerstext" : {
 			"zlevel" : 100,
 			"type" : "label",
-			"position" : [16, 121],
+			"position" : [16, 231],
 			"value" : "Players"
 		},
 
 		"shownpcs" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/image/uncheck.png",
-			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+			"base" : "/rexradar/ui/imageLarge/uncheck.png",
+			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/image/check.png",
-			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
 
 			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
-			"position" : [2, 107],
+			"position" : [2, 217],
 			"hAnchor" : "left",
 			"callback" : "callback"
 		},
 		"shownpcstext" : {
 			"zlevel" : 100,
 			"type" : "label",
-			"position" : [16, 109],
+			"position" : [16, 219],
 			"value" : "Npcs"
 		},
 
 		"showmonsters" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/image/uncheck.png",
-			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+			"base" : "/rexradar/ui/imageLarge/uncheck.png",
+			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/image/check.png",
-			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
 
 			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
-			"position" : [2, 95],
+			"position" : [2, 205],
 			"hAnchor" : "left",
 			"callback" : "callback"
 		},
 		"showmonsterstext" : {
 			"zlevel" : 100,
 			"type" : "label",
-			"position" : [16, 97],
+			"position" : [16, 207],
 			"value" : "Monsters"
 		},
 
 		"showobjects" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/image/uncheck.png",
-			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+			"base" : "/rexradar/ui/imageLarge/uncheck.png",
+			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/image/check.png",
-			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
 
 			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
-			"position" : [2, 83],
+			"position" : [2, 193],
 			"hAnchor" : "left",
 			"callback" : "callback"
 		},
 		"showobjectstext" : {
 			"zlevel" : 100,
 			"type" : "label",
-			"position" : [16, 85],
+			"position" : [16, 195],
 			"value" : "Objects"
 		},
 
 		"showvehicles" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/image/uncheck.png",
-			"hover" : "/rexradar/ui/image/uncheck.png?brightness=60",
+			"base" : "/rexradar/ui/imageLarge/uncheck.png",
+			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/image/check.png",
-			"hoverImageChecked" : "/rexradar/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
 
 			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
-			"position" : [2, 71],
+			"position" : [2, 181],
 			"hAnchor" : "left",
 			"callback" : "callback"
 		},
 		"showvehiclestext" : {
 			"zlevel" : 100,
 			"type" : "label",
-			"position" : [16, 73],
+			"position" : [16, 183],
 			"value" : "Vehicles"
 		}
 

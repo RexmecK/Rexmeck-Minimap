@@ -6,7 +6,7 @@ include "chunkPosition"
 chunk = {}
 chunk.position = {0,0}
 chunk.pcolor = {0,0,0} -- progress color
-chunk.blockSpeed = 1
+chunk.blockSpeed = 2
 
 local function _lerpColor3(from, to, s)
     return {
@@ -22,6 +22,14 @@ function chunk:new()
         newchunk[i] = v
     end
     return newchunk
+end
+
+local function blockloaded(position)
+    local mat = world.material(position, "foreground")
+    if type(mat) == "nil" then 
+        return false
+    end
+    return true
 end
 
 local function getBlockColor(position) 
@@ -83,16 +91,26 @@ end
 
 function chunk:scan() --returns a image path with directives
     local offset = positionChunk(self.position)
-    local image = "/rexradar/32x32.png"
+    local image = "/rexradar/"..chunkSize[1].."x"..chunkSize[2]..".png"
     local palettes = ""
     local l = 0
-    for x=1,32 do 
-        for y=1,32 do
+
+    --check if the regions are loaded
+    if  not blockloaded(vec2.add(offset, {0.5,0.5})) or
+        not blockloaded(vec2.add(offset, vec2.add(chunkSize, {-0.5, -0.5}))) or
+        not blockloaded(vec2.add(offset, vec2.add({chunkSize[1], 0}, {-0.5, 0.5}))) or 
+        not blockloaded(vec2.add(offset, vec2.add({0, chunkSize[2]}, {0.5, -0.5})))
+        then
+        return 
+    end
+
+    for x=1,chunkSize[1] do 
+        for y=1,chunkSize[2] do
             local matoffset = {offset[1] + x - 0.5, offset[2] + y - 0.5}
             local color, type = getBlockColor(matoffset)
             
             if type == "notloaded" then
-                return
+                return 
             end
 
             if color then
@@ -100,8 +118,8 @@ function chunk:scan() --returns a image path with directives
                     color = {color[1] * 0.5, color[2] * 0.5, color[3] * 0.5, 255}
                 end
                 palettes = palettes..";"..compactHexString({x - 1, 0, y - 1, 1}).."="..compactHexString(color)
-                self.pcolor = _lerpColor3(self.pcolor, color, 1/32)
-                self.pcolor[4] = math.floor(255 * (x/32))
+                self.pcolor = _lerpColor3(self.pcolor, color, 1/chunkSize[1])
+                self.pcolor[4] = math.floor(255 * (x/chunkSize[1]))
             end
 
             if l >= self.blockSpeed then

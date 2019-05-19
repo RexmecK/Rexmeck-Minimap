@@ -33,15 +33,15 @@ function module:update(dt)
         local size = self.canvas:size()
 
         --update Views
-        local chunkPos = chunkPosition(vec2.sub(self.viewPos, {32,32}))
-        local viewChunkSize = vec2.add(chunkPosition(self.sizeCanvas), {1,1})
-        self.chunkManager.view = {chunkPos, vec2.add(chunkPos, viewChunkSize)}
+        local chunkPos =        chunkPosition(self.viewPos)
+        local viewChunkSize =   chunkPosition(self.sizeCanvas)
+        self.chunkManager.view = {vec2.add(chunkPos, {-1,-1}), vec2.add(chunkPos, viewChunkSize)}
         self.chunkManager:update(dt)
         entityTracker:update(dt)
         self:updateCanvas()
 
         self.canvas:drawText(
-            sb.printJson(self.viewPos),
+            sb.printJson(vec2.add(self.viewPos, self.middle)),
             {
                 position = {2,0},
                 horizontalAnchor = "left",
@@ -169,10 +169,10 @@ function module:updateCanvas()
             local relative = world.distance(v.position, self.viewPos)
 
             self.canvas:drawLine(
-                vec2.add(relative, {16,0}),
-                vec2.add(relative, {16,32} ), 
+                vec2.add(relative, {v.size[1] * 0.5,0}),
+                vec2.add(relative, {v.size[1] * 0.5,v.size[2]} ), 
                 "#"..v.square, 
-                64
+                v.size[1] * 2
             )
         end
     end

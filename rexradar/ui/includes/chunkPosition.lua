@@ -5,10 +5,12 @@ local function round(n)
 	return math.floor(n)
 end
 
+chunkSize = {40,40}
+
 function chunkPosition(pos)
-    return {round(pos[1] / 32), round(pos[2] / 32)}
+    return {round(pos[1] / chunkSize[1]), round(pos[2] / chunkSize[2])}
 end
 
 function positionChunk(pos)
-    return {pos[1] * 32, pos[2] * 32}
+    return {pos[1] * chunkSize[1], pos[2] * chunkSize[2]}
 end

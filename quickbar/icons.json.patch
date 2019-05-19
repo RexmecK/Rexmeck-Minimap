@@ -3,5 +3,10 @@
 		"op": "add",
     	"path": "/normal/-",
     	"value": { "label" : "Rexmeck Radar", "pane" : "/rexradar/ui/main.window", "icon" : "/rexradar/ui/image/smallicon.png" }
+    },
+	{
+		"op": "add",
+    	"path": "/normal/-",
+    	"value": { "label" : "Rexmeck Radar Large", "pane" : "/rexradar/ui/mainLarge.window", "icon" : "/rexradar/ui/image/smallicon.png" }
     }
 ]

@@ -3,6 +3,7 @@ include "color"
 main = {}
 
 function main:init()
+    _images.bg1 = window.bg1.file
 	pcall(setUIColor, status.statusProperty("rex_ui_color", "72e372"))
 	shiftingEnabled = status.statusProperty("rex_ui_rainbow", false)
 end
