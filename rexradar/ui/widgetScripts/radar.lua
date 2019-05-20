@@ -181,10 +181,10 @@ end
 
 function module:inCanvas(point)
     return 
-        (self.rect[3] - self.rect[1] + 30) > point[1] and 
-        (self.rect[4] - self.rect[2]) > point[2] and 
-        (point[1] > self.rect[1]) and 
-        (point[2] > self.rect[2])
+        self.rect[3] > point[1] and 
+        self.rect[4] > point[2] and 
+        0 < point[1] and 
+        0 < point[2]
 end
 
 function module:updateMouse()

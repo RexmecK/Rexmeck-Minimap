@@ -4,6 +4,7 @@
   "friendlyName" : "Rexmeck Radar",
   "link" : "steam://url/CommunityFilePage/1743592138",
   "name" : "rexradar",
+  "includes" : ["QuickbarMini"],
   "steamContentId" : "1743592138",
   "tags" : "User Interface|In-Game Tools",
   "version" : "Alpha 1"
