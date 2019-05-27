@@ -1,11 +1,25 @@
 include "color"
 
 main = {}
+main.includedTypesChecked = {}
 
 function main:init()
     _images.bg1 = window.bg1.file
 	pcall(setUIColor, status.statusProperty("rex_ui_color", "72e372"))
 	shiftingEnabled = status.statusProperty("rex_ui_rainbow", false)
+	self.includedTypesChecked = status.statusProperty("radarincludedTypesChecked", {
+            showplayers=false,
+            shownpcs=false,
+            showmonsters=false,
+            showobjects=false,
+            showvehicles=false
+        }
+    )
+    for i,v in pairs(self.includedTypesChecked) do
+        if window[i] and type(window[i].checked) ~= "nil" then
+            window[i]:setChecked(v)
+        end
+    end
 end
 
 function main:update(dt)
@@ -30,7 +44,11 @@ function main:update(dt)
 end
 
 function main:uninit()
-
+    local checked = {}
+    for i,v in pairs(self.includedTypesChecked) do
+        checked[i] = window[i].checked
+    end
+    status.setStatusProperty("radarincludedTypesChecked", checked)
 end
 
 
