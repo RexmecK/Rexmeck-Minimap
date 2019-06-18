@@ -56,7 +56,7 @@ _buttons = {
 }
 
 _images = {
-	bg1 = "/rexradar/ui/image/header.png"
+	bg1 = "/rexminimap/ui/image/header.png"
 }
 
 _texts = {

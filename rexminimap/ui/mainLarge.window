@@ -4,9 +4,9 @@
 		"close" : {
 			"type" : "button",
 
-			"base" : "/rexradar/ui/imageLarge/x.png",
-			"hover" : "/rexradar/ui/imageLarge/x.png",
-			"pressed" : "/rexradar/ui/imageLarge/x.png",
+			"base" : "/rexminimap/ui/imageLarge/x.png",
+			"hover" : "/rexminimap/ui/imageLarge/x.png",
+			"pressed" : "/rexminimap/ui/imageLarge/x.png",
 			"pressedOffset" : [0, 0],
 
 			"callback" : "close",
@@ -18,15 +18,15 @@
 			"zlevel" : -1,
 			"type" : "background",
 
-			"fileHeader" : "/rexradar/ui/imageLarge/header.png",
-			"fileBody" : "/rexradar/ui/imageLarge/body.png"
+			"fileHeader" : "/rexminimap/ui/imageLarge/header.png",
+			"fileBody" : "/rexminimap/ui/imageLarge/body.png"
 		},
 
 		"bg1" : {
 			"zlevel" : 55,
 			"type" : "image",
 
-			"file" : "/rexradar/ui/imageLarge/header.png",
+			"file" : "/rexminimap/ui/imageLarge/header.png",
 			"position" : [0,242]
 		},
 
@@ -34,13 +34,13 @@
 			"zlevel" : 100,
 			"type" : "label",
 			"position" : [3, 243],
-			"value" : "^#343434;Rexmeck Radar"
+			"value" : "^#343434;Rexmeck Minimap"
 		},
 
 		"radar" : {
 			"zlevel" : 4,
 			"type" : "canvas",
-			"script" : "/rexradar/ui/widgetScripts/radar.lua",
+			"script" : "/rexminimap/ui/widgetScripts/radar.lua",
 			"rect" : [62, 2, 360, 240],
 
 			"captureMouseEvents" : true,
@@ -49,13 +49,13 @@
 
 		"showplayers" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/imageLarge/uncheck.png",
-			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
+			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
+			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
 
-			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
@@ -72,13 +72,13 @@
 
 		"shownpcs" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/imageLarge/uncheck.png",
-			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
+			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
+			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
 
-			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
@@ -95,13 +95,13 @@
 
 		"showmonsters" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/imageLarge/uncheck.png",
-			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
+			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
+			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
 
-			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
@@ -118,13 +118,13 @@
 
 		"showobjects" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/imageLarge/uncheck.png",
-			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
+			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
+			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
 
-			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
@@ -141,13 +141,13 @@
 
 		"showvehicles" : {
 			"type" : "button",
-			"base" : "/rexradar/ui/imageLarge/uncheck.png",
-			"hover" : "/rexradar/ui/imageLarge/uncheck.png?brightness=60",
+			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
+			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexradar/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexradar/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
 
-			"script" : "/rexradar/ui/widgetScripts/checkable.lua",
+			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
 			"checkable" : true,
 			"checked" : false,
@@ -174,9 +174,9 @@
 		"callback"
 	],
 
-	"mainScript" : "/rexradar/ui/main.lua",
+	"mainScript" : "/rexminimap/ui/main.lua",
 
-    "localDir" : "/rexradar/ui/",
-	"scripts" : ["/rexradar/ui/scripts/core.lua"],
+    "localDir" : "/rexminimap/ui/",
+	"scripts" : ["/rexminimap/ui/scripts/core.lua"],
 	"scriptDelta" : 1
 }

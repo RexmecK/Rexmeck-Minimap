@@ -91,7 +91,7 @@ end
 
 function chunk:scan() --returns a image path with directives
     local offset = positionChunk(self.position)
-    local image = "/rexradar/"..chunkSize[1].."x"..chunkSize[2]..".png"
+    local image = "/rexminimap/"..chunkSize[1].."x"..chunkSize[2]..".png"
     local palettes = ""
     local l = 0
 
