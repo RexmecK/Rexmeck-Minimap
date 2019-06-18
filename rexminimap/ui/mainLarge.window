@@ -52,8 +52,8 @@
 			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
 			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/player-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/player-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -75,8 +75,8 @@
 			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
 			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/npc-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/npc-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -98,8 +98,8 @@
 			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
 			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/monster-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/monster-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -121,8 +121,8 @@
 			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
 			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/object-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/object-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -144,8 +144,8 @@
 			"base" : "/rexminimap/ui/imageLarge/uncheck.png",
 			"hover" : "/rexminimap/ui/imageLarge/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/imageLarge/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/imageLarge/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/imageLarge/vehicle-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/imageLarge/vehicle-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 

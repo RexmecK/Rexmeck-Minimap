@@ -54,6 +54,14 @@ function module:update(dt)
     end
 end
 
+local colorEntityTypes = {
+    player = "#8f0",
+    npc = "#08f",
+    monster = "#f00",
+    object = "#ff0",
+    vehicle = "#f08",
+}
+
 function module:renderEntities()
     local query = world.entityQuery(
         vec2.sub(self.playerPos, self.middle),
@@ -87,20 +95,21 @@ function module:renderEntities()
 
     for i,v in pairs(query) do
         local relative = world.distance(world.entityPosition(v), self.viewPos)
-        local color = "#fff"
+        local Type = world.entityType(v)
+        local color = colorEntityTypes[Type] or "#fff"
 
         if v == self.playerId then
-            color = "#ff0"
+            color = "#8f8"
         end
 
         if self.hovering and self.hovering == v then
-            color = "#0f0"
+            color = "#fff"
             --shows informations about the entity
             local infos = {
                 Aggressive = world.entityAggressive(v),
                 Money = world.entityCurrency(v, "money"),
                 Description = world.entityDescription(v),
-                Type = world.entityType(v),
+                Type = Type,
                 Name = world.entityName(v),
                 Gender = world.entityGender(v),
                 Species = world.entitySpecies(v),

@@ -52,8 +52,8 @@
 			"base" : "/rexminimap/ui/image/uncheck.png",
 			"hover" : "/rexminimap/ui/image/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/image/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/image/player-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/image/player-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -75,8 +75,8 @@
 			"base" : "/rexminimap/ui/image/uncheck.png",
 			"hover" : "/rexminimap/ui/image/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/image/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/image/npc-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/image/npc-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -98,8 +98,8 @@
 			"base" : "/rexminimap/ui/image/uncheck.png",
 			"hover" : "/rexminimap/ui/image/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/image/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/image/monster-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/image/monster-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -121,8 +121,8 @@
 			"base" : "/rexminimap/ui/image/uncheck.png",
 			"hover" : "/rexminimap/ui/image/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/image/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/image/object-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/image/object-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 
@@ -144,8 +144,8 @@
 			"base" : "/rexminimap/ui/image/uncheck.png",
 			"hover" : "/rexminimap/ui/image/uncheck.png?brightness=60",
 
-			"baseImageChecked" : "/rexminimap/ui/image/check.png",
-			"hoverImageChecked" : "/rexminimap/ui/image/check.png?brightness=60",
+			"baseImageChecked" : "/rexminimap/ui/image/vehicle-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/image/vehicle-checked.png?brightness=60",
 
 			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
 

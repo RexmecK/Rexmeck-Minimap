@@ -44,7 +44,7 @@ function chunkManager:getView()
 			elseif self.useWorldProperties and world.getProperty("RexRadar"..chunkSize[1].."x"..chunkSize[2].."_"..wrapx..","..y) then --baked render
 				local p = world.getProperty("RexRadar"..chunkSize[1].."x"..chunkSize[2].."_"..wrapx..","..y)
 
-				if type(p) == "string" and utf8.sub(p,1,string.len("/rexradar/"..chunkSize[1].."x"..chunkSize[2]..".png")) == "/rexradar/"..chunkSize[1].."x"..chunkSize[2]..".png" then
+				if type(p) == "string" and utf8.sub(p,1,string.len("/rexminimap/"..chunkSize[1].."x"..chunkSize[2]..".png")) == "/rexminimap/"..chunkSize[1].."x"..chunkSize[2]..".png" then
 					table.insert(
 						pack, 
 						{
