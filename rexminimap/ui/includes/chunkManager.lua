@@ -9,7 +9,7 @@ chunkManager.view = {{1,1}, {2,2}}
 chunkManager.map = {}
 chunkManager.finalRenderedMap = {}
 chunkManager.earlyRenderedMap = {}
-chunkManager.useWorldProperties = true
+chunkManager.useWorldProperties = false
 
 function chunkManager:new()
 	local n = {}
