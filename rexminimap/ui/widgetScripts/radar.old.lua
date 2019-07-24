@@ -6,15 +6,6 @@ include "entityTracker"
 module = {}
 module.hovering = false
 module.includedTypes = {"creature"}
-module.targetZoom = 1.0
-module.zoom = 1.0
-
-local function round(n)
-	if n % 1 > 0.5 then
-		return math.ceil(n)
-	end
-	return math.floor(n)
-end
 
 function module:init()
     self.sizeCanvas = self.canvas:size()
@@ -32,44 +23,28 @@ function module:update(dt)
     self.playerPos = world.entityPosition(player.id())
     self:updateMouse()
     
-    self.zoom = self.zoom + (self.targetZoom - self.zoom) * 0.25
-
     if self.currentWorld ~= player.worldId() then
         self.currentWorld = player.worldId()
         self.chunkManager:clear()
     end
 
     if self.playerPos then
-        self.viewPos = vec2.add(vec2.mul(self.playerPos, self.zoom), self.viewOffset)
+        self.viewPos = vec2.add(self.playerPos, self.viewOffset)
         local size = self.canvas:size()
 
         --update Views
-        local chunkPos =        chunkPosition(vec2.add(self.playerPos, vec2.div(self.viewOffset, self.zoom)))
-        local viewChunkSize =   chunkPosition(vec2.div(self.sizeCanvas, self.zoom))
-        local viewpadding = round(1 / self.zoom)
-        local viewRightpadding = round(1 / self.zoom)
-        self.chunkManager.view = {vec2.sub(chunkPos, {viewpadding,viewpadding}), vec2.add(chunkPos, vec2.add(viewChunkSize, {viewRightpadding,viewRightpadding}))}
+        local chunkPos =        chunkPosition(self.viewPos)
+        local viewChunkSize =   chunkPosition(self.sizeCanvas)
+        self.chunkManager.view = {vec2.add(chunkPos, {-1,-1}), vec2.add(chunkPos, viewChunkSize)}
         self.chunkManager:update(dt)
         entityTracker:update(dt)
         self:updateCanvas()
 
         self.canvas:drawText(
-            sb.printJson(vec2.add(vec2.add(self.playerPos, self.viewOffset), self.middle)),
+            sb.printJson(vec2.add(self.viewPos, self.middle)),
             {
                 position = {2,0},
                 horizontalAnchor = "left",
-                verticalAnchor = "bottom",
-                wrapWidth = nil
-            },
-            8,
-            "#fff"
-        )
-
-        self.canvas:drawText(
-            self.targetZoom,
-            {
-                position = {self.sizeCanvas[1],0},
-                horizontalAnchor = "right",
                 verticalAnchor = "bottom",
                 wrapWidth = nil
             },
@@ -95,7 +70,7 @@ function module:renderEntities()
     )
 
     local hovering = world.entityQuery(
-        vec2.add(vec2.div(self.viewPos, self.zoom), vec2.div(self.mousePosition, self.zoom)),
+        vec2.add(self.viewPos, self.mousePosition),
         4,
         {
             order = "nearest",
@@ -111,15 +86,15 @@ function module:renderEntities()
 
     if entityTracker.position then
         self.canvas:drawLine(
-            vec2.sub(vec2.mul(self.playerPos, self.zoom), self.viewPos),
-            vec2.sub(vec2.mul(entityTracker.position, self.zoom), self.viewPos ),
+            vec2.sub(self.playerPos, self.viewPos),
+            vec2.sub(entityTracker.position, self.viewPos ),
             "#f006",
             4
         )
     end
 
     for i,v in pairs(query) do
-        local relative = world.distance(vec2.mul(world.entityPosition(v), self.zoom), self.viewPos)
+        local relative = world.distance(world.entityPosition(v), self.viewPos)
         local Type = world.entityType(v)
         local color = colorEntityTypes[Type] or "#fff"
 
@@ -186,18 +161,16 @@ end
 
 function module:updateCanvas()
     self.canvas:clear()
-    self.chunkManager.scale = self.zoom
     local view = self.chunkManager:getView()
-    self.canvas:drawRect({0,0,self.sizeCanvas[1], self.sizeCanvas[2]}, "#8af")
-
-
+    self.canvas:drawRect({0,0,self.sizeCanvas[1], self.sizeCanvas[2]}, "#000")
     --render Chunks
     for i,v in pairs(view) do
         if v.image then -- loaded chunk
+
             self.canvas:drawImage(
                 v.image, 
                 vec2.sub(v.position, self.viewPos),
-                self.zoom,
+                1,
                 "#fff",
                 false
             )

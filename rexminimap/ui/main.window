@@ -155,6 +155,33 @@
 			"hAnchor" : "left",
 			"callback" : "callback"
 		},
+
+		"zoomout" : {
+			"type" : "button",
+			
+			"base" : "/rexminimap/ui/image/zoomout.png",
+			"hover" : "/rexminimap/ui/image/zoomout.png?brightness=60",
+
+			"script" : "/rexminimap/ui/widgetScripts/button.lua",
+
+			"position" : [2, 2],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+
+		"zoomin" : {
+			"type" : "button",
+			
+			"base" : "/rexminimap/ui/image/zoomin.png",
+			"hover" : "/rexminimap/ui/image/zoomin.png?brightness=60",
+
+			"script" : "/rexminimap/ui/widgetScripts/button.lua",
+
+			"position" : [14, 2],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+
 		"showvehiclestext" : {
 			"zlevel" : 100,
 			"type" : "label",

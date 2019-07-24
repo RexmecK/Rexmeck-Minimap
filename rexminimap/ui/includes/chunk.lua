@@ -5,7 +5,7 @@ include "chunkPosition"
 
 chunk = {}
 chunk.position = {0,0}
-chunk.pcolor = {0,0,0} -- progress color
+chunk.pcolor = {0,0,0,0} -- progress color
 chunk.blockSpeed = 2
 
 local function _lerpColor3(from, to, s)

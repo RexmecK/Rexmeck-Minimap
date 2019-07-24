@@ -7,9 +7,10 @@ include "uCoroutine"
 chunkManager = {}
 chunkManager.view = {{1,1}, {2,2}}
 chunkManager.map = {}
+chunkManager.scale = 1.0
 chunkManager.finalRenderedMap = {}
 chunkManager.earlyRenderedMap = {}
-chunkManager.useWorldProperties = false
+chunkManager.useWorldProperties = true
 
 function chunkManager:new()
 	local n = {}
@@ -38,7 +39,7 @@ function chunkManager:getView()
 					pack, 
 					{
 						image = self.finalRenderedMap[wrapx..","..y],
-						position = {x*chunkSize[1], y*chunkSize[2]}
+						position = {x*chunkSize[1] * self.scale, y*chunkSize[2] * self.scale}
 					}
 				)
 			elseif self.useWorldProperties and world.getProperty("RexRadar"..chunkSize[1].."x"..chunkSize[2].."_"..wrapx..","..y) then --baked render
@@ -49,7 +50,7 @@ function chunkManager:getView()
 						pack, 
 						{
 							image = p,
-							position = {x*chunkSize[1], y*chunkSize[2]}
+							position = {x*chunkSize[1] * self.scale, y*chunkSize[2] * self.scale}
 						}
 					)
 				end
@@ -57,8 +58,8 @@ function chunkManager:getView()
 				table.insert(pack, 
 					{
 						square = self.earlyRenderedMap[wrapx..","..y],
-						position = {x*chunkSize[1], y*chunkSize[2]},
-						size = chunkSize
+						position = {x*chunkSize[1] * self.scale, y*chunkSize[2] * self.scale},
+						size = vec2.mul(chunkSize, self.scale)
 					}
 				)
 			end

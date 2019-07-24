@@ -6,11 +6,12 @@ local function round(n)
 end
 
 chunkSize = {40,40}
+chunkScale = 1.0
 
 function chunkPosition(pos)
-    return {round(pos[1] / chunkSize[1]), round(pos[2] / chunkSize[2])}
+    return {round(pos[1] / chunkSize[1] * chunkScale), round(pos[2] / chunkSize[2] * chunkScale)}
 end
 
 function positionChunk(pos)
-    return {pos[1] * chunkSize[1], pos[2] * chunkSize[2]}
+    return {pos[1] * chunkSize[1] * chunkScale, pos[2] * chunkSize[2] * chunkScale}
 end

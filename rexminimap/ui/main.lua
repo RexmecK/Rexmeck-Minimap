@@ -20,6 +20,8 @@ function main:init()
             window[i]:setChecked(v)
         end
     end
+    window.zoomin:bind(function() window.radar.targetZoom = window.radar.targetZoom + 0.125 end)
+    window.zoomout:bind(function() window.radar.targetZoom = math.max(window.radar.targetZoom - 0.125, 0.125) end)
 end
 
 function main:update(dt)
