@@ -155,6 +155,36 @@
 			"hAnchor" : "left",
 			"callback" : "callback"
 		},
+		"showvehiclestext" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [16, 183],
+			"value" : "Vehicles"
+		},
+
+		"useworldcache" : {
+			"type" : "button",
+			"base" : "/rexminimap/ui/image/uncheck.png",
+			"hover" : "/rexminimap/ui/image/uncheck.png?brightness=60",
+
+			"baseImageChecked" : "/rexminimap/ui/image/useworldcache-checked.png",
+			"hoverImageChecked" : "/rexminimap/ui/image/useworldcache-checked.png?brightness=60",
+
+			"script" : "/rexminimap/ui/widgetScripts/checkable.lua",
+
+			"checkable" : true,
+			"checked" : false,
+			"position" : [2, 14],
+			"hAnchor" : "left",
+			"callback" : "callback"
+		},
+		"useworldcachetext" : {
+			"zlevel" : 100,
+			"type" : "label",
+			"position" : [16, 14],
+			"value" : "WorldCache"
+		},
+
 		
 		"zoomout" : {
 			"type" : "button",
@@ -180,13 +210,6 @@
 			"position" : [14, 2],
 			"hAnchor" : "left",
 			"callback" : "callback"
-		},
-
-		"showvehiclestext" : {
-			"zlevel" : 100,
-			"type" : "label",
-			"position" : [16, 183],
-			"value" : "Vehicles"
 		}
 
 	},

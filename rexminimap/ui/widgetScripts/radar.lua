@@ -66,7 +66,7 @@ function module:update(dt)
         )
 
         self.canvas:drawText(
-            self.targetZoom,
+            self.targetZoom.."x",
             {
                 position = {self.sizeCanvas[1],0},
                 horizontalAnchor = "right",
@@ -188,7 +188,7 @@ function module:updateCanvas()
     self.canvas:clear()
     self.chunkManager.scale = self.zoom
     local view = self.chunkManager:getView()
-    self.canvas:drawRect({0,0,self.sizeCanvas[1], self.sizeCanvas[2]}, "#8af")
+    self.canvas:drawRect({0,0,self.sizeCanvas[1], self.sizeCanvas[2]}, "#248")
 
 
     --render Chunks
