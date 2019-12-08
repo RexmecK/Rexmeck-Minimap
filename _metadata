@@ -1,11 +1,11 @@
 {
   "author" : "RexmecK",
-  "description" : "https://discord.gg/yCZEHh9\n\nFU not tested.\n\nHow to use:\n1. Open quickbar\n2. Open Rexmeck Minimap\n3. Hold Click on the map to pan\n4. Alt Click to reset position\n5. Hover mouse over an entity for details\n\nFeatures:\n- Entity tracking (only if they have a UniqueId)\n- Minimap itself\n\nThe Minimap will guess the block color from the material config and texture if the color is not defined. This causes lag spikes.\n",
+  "description" : "https://discord.gg/yCZEHh9\n\nHow to use:\n1. Open quickbar\n2. Open Rexmeck Minimap\n3. Hold Click on the map to pan\n4. Alt Click to reset position\n5. Hover mouse over an entity for details\n\nFeatures:\n- Entity tracking (only if they have a UniqueId)\n- Minimap itself\n\n>>The Minimap will guess the block color from the material config and texture if the color is not defined. This causes lag spikes.\n",
   "friendlyName" : "Rexmeck Minimap",
   "includes" : ["QuickbarMini"],
   "link" : "steam://url/CommunityFilePage/1743592138",
   "name" : "rexminimap",
   "steamContentId" : "1743592138",
   "tags" : "User Interface|In-Game Tools",
-  "version" : "Alpha 3"
+  "version" : "Alpha 4"
 }
