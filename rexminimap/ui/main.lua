@@ -22,8 +22,8 @@ function main:init()
             window[i]:setChecked(v)
         end
     end
-    window.radar.targetZoom = status.statusProperty("minimapZoom", 1)
-    window.zoomin:bind(function() window.radar.targetZoom = window.radar.targetZoom + 0.125 end)
+    window.radar.targetZoom = math.max(math.min(status.statusProperty("minimapZoom", 1), 2), 0.125)
+    window.zoomin:bind(function() window.radar.targetZoom = math.min(window.radar.targetZoom + 0.125, 2) end)
     window.zoomout:bind(function() window.radar.targetZoom = math.max(window.radar.targetZoom - 0.125, 0.125) end)
 end
 

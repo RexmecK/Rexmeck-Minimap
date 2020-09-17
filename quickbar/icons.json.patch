@@ -8,5 +8,10 @@
 		"op": "add",
     	"path": "/normal/-",
     	"value": { "label" : "Rexmeck Minimap Large", "pane" : "/rexminimap/ui/mainLarge.window", "icon" : "/rexminimap/ui/image/smallicon.png" }
+    },
+	{
+		"op": "add",
+    	"path": "/normal/-",
+    	"value": { "label" : "Rexmeck Minimap Reset", "pane" : "/rexminimap/resetsettings/main.window", "icon" : "/rexminimap/ui/image/smallicon.png" }
     }
 ]

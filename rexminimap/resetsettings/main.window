@@ -1,0 +1,29 @@
+{
+	"gui" : {
+
+		"close" : {
+			"type" : "button",
+
+			"base" : "/rexminimap/ui/image/x.png",
+			"hover" : "/rexminimap/ui/image/x.png",
+			"pressed" : "/rexminimap/ui/image/x.png",
+			"pressedOffset" : [0, 0],
+
+			"callback" : "close",
+			"position" : [189, 132],
+			"zlevel" : 99
+		},
+
+		"background" : {
+			"zlevel" : -1,
+			"type" : "background",
+
+			"fileHeader" : "/assetmissing.png",
+			"fileBody" : "/assetmissing.png"
+		}
+
+	},
+
+	"scripts" : ["/rexminimap/resetsettings/main.lua"],
+	"scriptDelta" : 1
+}
